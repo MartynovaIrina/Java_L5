@@ -14,7 +14,9 @@ public class Homework_Task2 {
         Scanner sc = new Scanner(System.in);
         String account;
         int numberOfSubmits;
-        numberOfSubmits = sc.nextInt(); sc.nextLine();
+        numberOfSubmits = sc.nextInt();
+        sc.nextLine();
+
         for (int i = 0; i < numberOfSubmits; i++){
             account = sc.next();
             if (!accountsAndRepeats.containsKey(account)){
@@ -26,8 +28,9 @@ public class Homework_Task2 {
         }
     }
     public static void printSpammers(){
+        int maxAmountOfSubmits = 1;
         for (String accountSpam : accountsAndRepeats.keySet()) {
-            if (accountsAndRepeats.get(accountSpam) > 1) {
+            if (accountsAndRepeats.get(accountSpam) > maxAmountOfSubmits) {
                 System.out.println(accountSpam);
             }
         }
